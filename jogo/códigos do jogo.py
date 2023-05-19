@@ -12,7 +12,7 @@ AMARELO = (255, 255, 0)
 
 #Inicia Pygame e tela + nome da aba
 pygame.init() #Inicialização da biblioteca pygame
-WINDOW_WIDTH = 800
+WINDOW_WIDTH = 1600
 WINDOW_HEIGHT = 800
 window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT)) #Inicial a tela
 pygame.display.set_caption("GusGay") #Nome da aba
@@ -20,13 +20,13 @@ pygame.display.set_caption("GusGay") #Nome da aba
 font = pygame.font.SysFont(None, 48)
 
 #Background
-image_backgroud = pygame.image.load('Imagens - Pygame/background.jpg').convert()
+image_backgroud = pygame.image.load('assets/fundo.jpg').convert()
 
 
 #Passaro
 PASSARO_WIDTH = 50
 PASSARO_HEIGHT = 50
-image_passaro = pygame.image.load("Imagens - Pygame/passaro.png").convert_alpha()
+image_passaro = pygame.image.load("assets/passaro.png").convert_alpha()
 image_passaro = pygame.transform.scale(image_passaro, (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
 
 class Passaro(pygame.sprite.Sprite):
