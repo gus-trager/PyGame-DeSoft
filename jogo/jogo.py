@@ -62,7 +62,7 @@ passaro1 = Passaro(image_passaro)
         
 
 clock = pygame.time.Clock()
-FPS = 160
+FPS = 60
 
 #Game loop
 game = True
