@@ -20,13 +20,13 @@ pygame.display.set_caption("GusGay") #Nome da aba
 font = pygame.font.SysFont(None, 48)
 
 #Background
-image_backgroud = pygame.image.load('assets/fundo.jpg').convert()
+image_backgroud = pygame.image.load('assets/img/fundo.jpg').convert()
 
 
 #Passaro
 PASSARO_WIDTH = 50
 PASSARO_HEIGHT = 50
-image_passaro = pygame.image.load("assets/passaro.png").convert_alpha()
+image_passaro = pygame.image.load("assets/img/passaro.png").convert_alpha()
 image_passaro = pygame.transform.scale(image_passaro, (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
 
 class Passaro(pygame.sprite.Sprite):
