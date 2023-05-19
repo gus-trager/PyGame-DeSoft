@@ -45,13 +45,16 @@ class Passaro(pygame.sprite.Sprite):
             self.speedy = 0
 
     def update(self):
-        self.rect.x +=self.speedx
-        self.rect.y +=self.speedy
+        self.rect.x += self.speedx
+        self.rect.y += self.speedy
 
-        if self.rect.x > (WINDOW_WIDTH + PASSARO_WIDTH):
-            self.rect.x = random.choice([0 - PASSARO_WIDTH,WINDOW_WIDTH + PASSARO_WIDTH])
+        if self.rect.x > (WINDOW_WIDTH + PASSARO_WIDTH) or self.rect.x < (0 - PASSARO_WIDTH):
+            self.rect.x = random.choice([0 - PASSARO_WIDTH, WINDOW_WIDTH + PASSARO_WIDTH])
             self.rect.y = random.choice([100, 180])
-            self.speedx = random.randint(10,15)
+            if self.rect.x == (0 - PASSARO_WIDTH):
+                self.speedx = random.randint(10, 15)
+            else:
+                self.speedx = random.randint(-15, -10)
             self.speedy = 0
 
 
