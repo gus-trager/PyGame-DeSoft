@@ -57,8 +57,13 @@ class Passaro(pygame.sprite.Sprite):
                 self.speedx = random.randint(-15, -10)
             self.speedy = 0
 
+#Grupo de passaros
+all_passaros = pygame.sprite.Group()
 
-passaro1 = Passaro(image_passaro)
+#Criando vários passasor
+for i in range(10):
+    passaro = Passaro(image_passaro)
+    all_passaros.add(passaro)
         
 
 clock = pygame.time.Clock()
@@ -78,13 +83,14 @@ while game:
 
     
     #Atualiza a posição dos pássaros
+    all_passaros.update()
 
     window.fill((0, 0 ,0)) #Preenche a tela com a cor preta
     window.blit(image_backgroud, (0,0)) #Depois preenche com o backgroud
 
-    window.blit(passaro1.image, (passaro1.rect))
+    #Desenha os passaros na tela
+    all_passaros.draw(window)
 
-    passaro1.update()
     pygame.display.update()
 
 pygame.quit()
