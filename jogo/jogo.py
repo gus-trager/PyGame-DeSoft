@@ -38,10 +38,10 @@ class Passaro(pygame.sprite.Sprite):
         self.rect.x = random.choice([0 - PASSARO_WIDTH,WINDOW_WIDTH + PASSARO_WIDTH])
         self.rect.y = (100)
         if self.rect.x == (0 - PASSARO_WIDTH):
-            self.speedx = random.randint(20,21)
+            self.speedx = random.randint(10,15)
             self.speedy = 0
         else:
-            self.speedx = random.randint(20,21)
+            self.speedx = random.randint(10,15)
             self.speedy = 0
 
     def update(self):
@@ -51,7 +51,7 @@ class Passaro(pygame.sprite.Sprite):
         if self.rect.x > (WINDOW_WIDTH + PASSARO_WIDTH):
             self.rect.x = random.choice([0 - PASSARO_WIDTH,WINDOW_WIDTH + PASSARO_WIDTH])
             self.rect.y = (100)
-            self.speedx = random.randint(20,21)
+            self.speedx = random.randint(10,15)
             self.speedy = 0
 
 
@@ -59,7 +59,7 @@ passaro1 = Passaro(image_passaro)
         
 
 clock = pygame.time.Clock()
-FPS = 30
+FPS = 60
 
 #Game loop
 game = True
