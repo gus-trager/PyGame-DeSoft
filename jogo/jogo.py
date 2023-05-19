@@ -26,9 +26,15 @@ image_backgroud = pygame.image.load('assets/img/fundo.jpg').convert()
 #Passaro
 PASSARO_WIDTH = 50
 PASSARO_HEIGHT = 50
-image_passaro = pygame.image.load("assets/img/passaro.png").convert_alpha()
-image_passaro = pygame.transform.scale(image_passaro, (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
+image_passaro1 = pygame.image.load("assets/img/passaro.png").convert_alpha()
+image_passaro1 = pygame.transform.scale(image_passaro1, (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
 
+image_passaro2 = pygame.image.load("assets/img/passaro 2.png").convert_alpha()
+image_passaro2 = pygame.transform.scale(image_passaro1, (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
+
+#Classes
+
+#Classe que gera e atualiza os passaros
 class Passaro(pygame.sprite.Sprite):
     def __init__(self, img):
         pygame.sprite.Sprite.__init__(self)
@@ -62,10 +68,10 @@ all_passaros = pygame.sprite.Group()
 
 #Criando vários passasor
 for i in range(10):
-    passaro = Passaro(image_passaro)
+    passaro = Passaro(image_passaro1)
     all_passaros.add(passaro)
         
-
+#Limitador de FPS
 clock = pygame.time.Clock()
 FPS = 60
 
