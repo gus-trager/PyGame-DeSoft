@@ -89,7 +89,7 @@ som_arma3 = pygame.mixer.Sound(('assets/sounds/tiro arma3.mp3'))
 som_score = pygame.mixer.Sound('assets/sounds/score2.wav')
 
 
-#Classes
+########################################################################### Classes ############################################################################################################
 
 #Classe que gera e atualiza os passaros
 class Passaro(pygame.sprite.Sprite):
@@ -120,6 +120,61 @@ class Passaro(pygame.sprite.Sprite):
                 self.speedx = random.randint(-15, -10)
                 self.speedy = 0
 
+assets = {}
+
+explosion_anim = []
+
+for i in range(10):
+    filename = 'assets/img/explosao0{}.png'.format(i)
+    img = pygame.image.load(filename)
+    img = pygame.transform.scale(img, (32, 32))
+    explosion_anim.append(img)
+
+for i in range(2):
+    filename = 'assets/img/explosao1{}.png'.format(i)
+    img = pygame.image.load(filename)
+    img = pygame.transform.scale(img, (32, 32))
+    explosion_anim.append(img)
+
+assets['explosion_anim'] = explosion_anim 
+
+
+class Explosao(pygame.sprite.Sprite):
+    def __init__(self, centro, assets):
+        pygame.sprite.Sprite.__init__(self)
+
+        #Animação da explosão
+        self.explosion_anim = assets['explosion_anim']
+        
+        self.frame = 0
+        self.image = self.explosion_anim[self.frame] #Primeira imagem, ja que o frame está em 0 (lembrar de atulizar-lo no update)
+        self.rect = self.image.get_rect()
+        self.rect.center = centro #Centro da imagem
+
+        self.ultimo_update = pygame.time.get_ticks()
+
+        self.max_ticks = 50
+
+    def update(self):
+        atual = pygame.time.get_ticks()
+
+        passado = atual - self.ultimo_update
+
+        if passado > self.max_ticks:
+            self.ultimo_update = atual
+            self.frame +=1
+
+            if self.frame == len(self.explosion_anim):
+                self.kill()
+            else:
+                centro = self.rect.center
+                self.image = self.explosion_anim[self.frame]
+                self.rect = self.image.get_rect()
+                self.rect.center = centro
+
+        
+###################################################################################################################################################################################################
+        
 #Grupo de passaros
 all_passaros = pygame.sprite.Group()
 
@@ -159,6 +214,9 @@ while game:
                     passaro.kill()
                     pontos +=100
                     som_score.play()
+                    
+                    explosao = Explosao(passaro.rect.center, assets)
+                    all_passaros.add(explosao)
     
     #Atualiza a posição dos pássaros
     all_passaros.update()
