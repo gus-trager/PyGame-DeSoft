@@ -34,6 +34,37 @@ image_passaro1 = pygame.transform.scale(image_passaro1, (PASSARO_WIDTH, PASSARO_
 image_passaro2 = pygame.image.load("assets/img/passaro 2.png").convert_alpha()
 image_passaro2 = pygame.transform.scale(image_passaro1, (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
 
+#Mira 
+MIRA_WIDTH = 70
+MIRA_HEIGHT = 70
+image_mira = pygame.image.load('Imagens - Pygame/mira.png').convert_alpha()
+image_mira = pygame.transform.scale(image_mira, (MIRA_WIDTH, MIRA_HEIGHT)).convert_alpha()
+mira_rect = image_mira.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2))
+# Oculta o cursor do mouse
+pygame.mouse.set_visible(False)
+
+
+#Arma1
+ARMA1_WIDTH = 400
+ARMA1_HEIGHT = 400
+image_arma1 = pygame.image.load('Imagens - Pygame/arma1.png').convert_alpha()
+image_arma1 = pygame.transform.scale(image_arma1, (ARMA1_WIDTH, ARMA1_HEIGHT))
+arma1_rect = image_arma1.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.25))
+
+#Arma2
+ARMA2_WIDTH = 400
+ARMA2_HEIGHT = 400
+image_arma2 = pygame.image.load('Imagens - Pygame/arma2.png').convert_alpha()
+image_arma2 = pygame.transform.scale(image_arma2, (ARMA2_WIDTH, ARMA2_HEIGHT))
+arma2_rect = image_arma2.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.25))
+
+#Arma3
+ARMA3_WIDTH = 400
+ARMA3_HEIGHT = 400
+image_arma3 = pygame.image.load('Imagens - Pygame/arma3.png').convert_alpha()
+image_arma3 = pygame.transform.scale(image_arma3, (ARMA3_WIDTH, ARMA3_HEIGHT))
+arma3_rect = image_arma3.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.32))
+
 #Classes
 
 #Classe que gera e atualiza os passaros
