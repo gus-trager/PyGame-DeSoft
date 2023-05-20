@@ -83,7 +83,7 @@ som_arma1 = pygame.mixer.Sound('assets/sounds/tiro arma1.mp3')
 som_arma2 = pygame.mixer.Sound('assets/sounds/tiro arma2.mp3')
 
 #Som arma3
-#som_arma3 = pygame.mixer.Sound(('Sons - Pygame/tiro arma3.mp3'))
+som_arma3 = pygame.mixer.Sound(('assets/sounds/tiro arma3.mp3'))
 
 #Som score
 som_score = pygame.mixer.Sound('assets/sounds/score2.wav')
