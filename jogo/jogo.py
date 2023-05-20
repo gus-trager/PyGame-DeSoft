@@ -22,7 +22,7 @@ pygame.display.set_caption("GusGay") #Nome da aba
 font = pygame.font.SysFont(None, 48)
 
 #Background
-image_backgroud = pygame.image.load('assets/img/fundo.jpg').convert()
+image_backgroud = pygame.image.load('assets/img/fundo 1.jpg').convert()
 
 
 #Passaro
