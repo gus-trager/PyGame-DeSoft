@@ -186,7 +186,19 @@ while game:
     #Desenha os passaros na tela
     all_passaros.draw(window)
 
+   #Desenha a mira e a arma na tela
     window.blit(image_mira, mira_rect)
+    window.blit(image_arma2, arma2_rect)
+
+    #Desenha o placar de pontos
+    texto_pontos = font.render("Pontos: " + str(pontos), True, BRANCO)
+    posicao_pontos = texto_pontos.get_rect(bottomright=(WINDOW_WIDTH - 10, WINDOW_HEIGHT - 10))
+    window.blit(texto_pontos, posicao_pontos)
+
+    #Desenha o relogio de tempo
+    texto_tempo = font.render("Tempo: " + str(tempo_restante), True, BRANCO)
+    posicao_tempo = texto_tempo.get_rect(bottomright=(WINDOW_WIDTH -10, 40 ))
+    window.blit(texto_tempo, posicao_tempo)
 
     pygame.display.update()
 
