@@ -15,7 +15,7 @@ AMARELO = (255, 255, 0)
 pygame.init() #Inicialização da biblioteca pygame
 pygame.mixer.init() #Inicialização dos audios da biblioteca pygame
 WINDOW_WIDTH = 1600
-WINDOW_HEIGHT = 800
+WINDOW_HEIGHT = 900
 window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT)) #Inicial a tela
 pygame.display.set_caption("GusGay") #Nome da aba
 
