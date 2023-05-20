@@ -66,7 +66,7 @@ image_arma3 = pygame.transform.scale(image_arma3, (ARMA3_WIDTH, ARMA3_HEIGHT))
 arma3_rect = image_arma3.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.32))
 
 #Som ambiente1
-som_ambiente1 = pygame.mixer.Sound('assets/sounds/som ambiente.mp3')
+som_ambiente1 = pygame.mixer.Sound('assets/sounds/som ambiente 1.mp3')
 som_ambiente1.play(-1) #Loop infinito de som ambiente
 
 #Som ambiente2
