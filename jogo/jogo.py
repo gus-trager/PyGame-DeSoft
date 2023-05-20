@@ -132,6 +132,15 @@ for i in range(10):
 clock = pygame.time.Clock()
 FPS = 60
 
+#Variaveis para serem atualizadas no Game Loop
+pontos = 0
+
+tempo_total = 30
+tempo_restante = tempo_total
+tempo_inicial = time.time() #Retorna o tempo atual durante o loop
+
+pontuacao_max_1 = 2000
+
 #Game loop
 game = True
 while game:
@@ -148,15 +157,27 @@ while game:
             for passaro in all_passaros:
                 if passaro.rect.collidepoint(evento.pos):
                     passaro.kill()
+                    pontos +=100
                     som_score.play()
     
     #Atualiza a posição dos pássaros
     all_passaros.update()
 
 
-    #Movimento da mira
+
+    #Atualiza a mira
     mouse_pos = pygame.mouse.get_pos()
     mira_rect.center = mouse_pos
+
+
+    #Atualiza o relogio
+    if tempo_restante > 0:
+        tempo_atual = time.time() - tempo_inicial
+        tempo_restante = tempo_total - int(tempo_atual)
+    else:
+        tempo_restante = 0
+
+
 
 
     window.fill((0, 0 ,0)) #Preenche a tela com a cor preta
