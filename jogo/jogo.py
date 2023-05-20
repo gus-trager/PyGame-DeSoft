@@ -37,7 +37,7 @@ image_passaro2 = pygame.transform.scale(image_passaro1, (PASSARO_WIDTH, PASSARO_
 #Mira 
 MIRA_WIDTH = 70
 MIRA_HEIGHT = 70
-image_mira = pygame.image.load('Imagens - Pygame/mira.png').convert_alpha()
+image_mira = pygame.image.load("assets/img/mira.png").convert_alpha()
 image_mira = pygame.transform.scale(image_mira, (MIRA_WIDTH, MIRA_HEIGHT)).convert_alpha()
 mira_rect = image_mira.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2))
 # Oculta o cursor do mouse
@@ -47,26 +47,26 @@ pygame.mouse.set_visible(False)
 #Arma1
 ARMA1_WIDTH = 400
 ARMA1_HEIGHT = 400
-image_arma1 = pygame.image.load('Imagens - Pygame/arma1.png').convert_alpha()
+image_arma1 = pygame.image.load('assets/img/arma1.png').convert_alpha()
 image_arma1 = pygame.transform.scale(image_arma1, (ARMA1_WIDTH, ARMA1_HEIGHT))
 arma1_rect = image_arma1.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.25))
 
 #Arma2
 ARMA2_WIDTH = 400
 ARMA2_HEIGHT = 400
-image_arma2 = pygame.image.load('Imagens - Pygame/arma2.png').convert_alpha()
+image_arma2 = pygame.image.load('assets/img/arma2.png').convert_alpha()
 image_arma2 = pygame.transform.scale(image_arma2, (ARMA2_WIDTH, ARMA2_HEIGHT))
 arma2_rect = image_arma2.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.25))
 
 #Arma3
 ARMA3_WIDTH = 400
 ARMA3_HEIGHT = 400
-image_arma3 = pygame.image.load('Imagens - Pygame/arma3.png').convert_alpha()
+image_arma3 = pygame.image.load('assets/img/arma3.png').convert_alpha()
 image_arma3 = pygame.transform.scale(image_arma3, (ARMA3_WIDTH, ARMA3_HEIGHT))
 arma3_rect = image_arma3.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.32))
 
 #Som ambiente1
-som_ambiente1 = pygame.mixer.Sound('Sons - Pygame/som ambiente.mp3')
+som_ambiente1 = pygame.mixer.Sound('assets/sounds/som ambiente.mp3')
 som_ambiente1.play(-1) #Loop infinito de som ambiente
 
 #Som ambiente2
@@ -77,16 +77,16 @@ som_ambiente1.play(-1) #Loop infinito de som ambiente
 
 
 #Som arma1
-som_arma1 = pygame.mixer.Sound('Sons - Pygame/tiro arma1.mp3')
+som_arma1 = pygame.mixer.Sound('assets/sounds/tiro arma1.mp3')
 
 #Som arma2
-som_arma2 = pygame.mixer.Sound('Sons - Pygame/tiro arma2.mp3')
+som_arma2 = pygame.mixer.Sound('assets/sounds/tiro arma2.mp3')
 
 #Som arma3
 #som_arma3 = pygame.mixer.Sound(('Sons - Pygame/tiro arma3.mp3'))
 
 #Som score
-som_score = pygame.mixer.Sound('Sons - Pygame/score2.wav')
+som_score = pygame.mixer.Sound('assets/sounds/score2.wav')
 
 
 #Classes
