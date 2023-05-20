@@ -143,7 +143,12 @@ while game:
         if evento.type == pygame.QUIT or (evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE):
             game = False #ou pygame.quit()
             sys.exit() #Sai pela rotina do sistema
-
+        if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == pygame.BUTTON_LEFT:
+            som_arma2.play()
+            for passaro in all_passaros:
+                if passaro.rect.collidepoint(evento.pos):
+                    passaro.kill()
+                    som_score.play()
     
     #Atualiza a posição dos pássaros
     all_passaros.update()
