@@ -65,6 +65,30 @@ image_arma3 = pygame.image.load('Imagens - Pygame/arma3.png').convert_alpha()
 image_arma3 = pygame.transform.scale(image_arma3, (ARMA3_WIDTH, ARMA3_HEIGHT))
 arma3_rect = image_arma3.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.32))
 
+#Som ambiente1
+som_ambiente1 = pygame.mixer.Sound('Sons - Pygame/som ambiente.mp3')
+som_ambiente1.play(-1) #Loop infinito de som ambiente
+
+#Som ambiente2
+
+
+#Som ambiente3
+
+
+
+#Som arma1
+som_arma1 = pygame.mixer.Sound('Sons - Pygame/tiro arma1.mp3')
+
+#Som arma2
+som_arma2 = pygame.mixer.Sound('Sons - Pygame/tiro arma2.mp3')
+
+#Som arma3
+#som_arma3 = pygame.mixer.Sound(('Sons - Pygame/tiro arma3.mp3'))
+
+#Som score
+som_score = pygame.mixer.Sound('Sons - Pygame/score2.wav')
+
+
 #Classes
 
 #Classe que gera e atualiza os passaros
