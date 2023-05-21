@@ -21,9 +21,28 @@ pygame.display.set_caption("GusGay") #Nome da aba
 
 font = pygame.font.SysFont(None, 48)
 
+
+
 #Background
 image_backgroud = pygame.image.load('assets/img/fundo 1.jpg').convert()
 
+#Sapiro
+SAPIRO_WIDTH = 200
+SAPIRO_HEIGHT = 200
+image_sapiro = pygame.image.load('assets/img/sapiro.jpg')
+image_sapiro = pygame.transform.scale(image_sapiro, (SAPIRO_WIDTH, SAPIRO_HEIGHT)).convert()
+
+#Zorzi
+ZORZI_WIDHT = 200
+ZORZI_HEIGHT = 200
+image_zorzi = pygame.image.load('assets/img/zorzi.jpg')
+image_zorzi = pygame.transform.scale(image_zorzi,(ZORZI_WIDHT, ZORZI_HEIGHT)).convert()
+
+#Gus
+GUS_WIDHT = 200
+GUS_HEIGHT = 200
+#image_gus = pygame.image.load('assets/img/gus.jpg')
+#image_gus = pygame.transform.scale(image_gus,(GUS_WIDHT, GUS_HEIGHT)).convert()
 
 #Passaro
 PASSARO_WIDTH = 50
@@ -75,6 +94,9 @@ som_ambiente1.play(-1) #Loop infinito de som ambiente
 #Som ambiente3
 
 
+#Som tela de inicio
+
+
 
 #Som arma1
 som_arma1 = pygame.mixer.Sound('assets/sounds/tiro arma1.mp3')
@@ -88,6 +110,51 @@ som_arma3 = pygame.mixer.Sound(('assets/sounds/tiro arma3.mp3'))
 #Som score
 som_score = pygame.mixer.Sound('assets/sounds/score2.wav')
 
+
+#Fonte tela de inicio
+
+#Titulo do jogo
+fonte_titulo = 'assets/img/fonte titulo1.ttf'
+
+#Instrucoes do jogo
+fonte_instrucoes = 'assets/img/fonte instrucoes.TTF'
+
+########################################################################## Funções ##############################################################################################
+
+#Função da tela de inicio
+def tela_inicio():
+    tela_inicio = True
+
+    window.fill(PRETO)
+
+    fonte_tt = pygame.font.Font(fonte_titulo, 80)
+    texto_titulo = fonte_tt.render("GusGay Strike", True, VERMELHO)
+    texto_titulo_rect = texto_titulo.get_rect(center=(WINDOW_WIDTH//2, WINDOW_HEIGHT //6))
+
+    fonte_i = pygame.font.Font(fonte_instrucoes, 48)
+    texto_intrucoes = fonte_i.render("Pressione qualquer tecla para jogar", True, VERMELHO)
+    texto_intrucoes_rect = texto_intrucoes.get_rect(center=(WINDOW_WIDTH//2, WINDOW_HEIGHT //2 + 80))
+
+    window.blit(texto_titulo, texto_titulo_rect)
+    window.blit(texto_intrucoes, texto_intrucoes_rect)
+    window.blit(image_sapiro, (WINDOW_WIDTH//3.5, WINDOW_HEIGHT //3.5))
+    window.blit(image_zorzi, (WINDOW_WIDTH//2.3, WINDOW_HEIGHT //3.5))
+    pygame.display.update()
+
+
+    while tela_inicio:
+        for evento in pygame.event.get():
+            if evento.type == pygame.QUIT or (evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE):
+                pygame.quit()
+                sys.exit()
+
+            if evento.type == pygame.KEYDOWN:
+                tela_inicio = False
+
+
+tela_inicio()
+
+################################################################################################################################################################################################
 
 ########################################################################### Classes ############################################################################################################
 
