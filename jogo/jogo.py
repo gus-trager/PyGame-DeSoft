@@ -123,6 +123,7 @@ class Passaro(pygame.sprite.Sprite):
 assets = {}
 
 explosion_anim = []
+ponta_arma = []
 
 for i in range(10):
     filename = 'assets/img/explosao0{}.png'.format(i)
@@ -137,6 +138,14 @@ for i in range(2):
     explosion_anim.append(img)
 
 assets['explosion_anim'] = explosion_anim 
+
+for i in range(8):
+    filename2 = 'assets/img/ponta0{}.png'.format(i)
+    img = pygame.image.load(filename2)
+    img = pygame.transform.scale(img, (150, 150))
+    ponta_arma.append(img)
+
+assets['ponta_arma'] = ponta_arma
 
 
 class Explosao(pygame.sprite.Sprite):
@@ -172,6 +181,37 @@ class Explosao(pygame.sprite.Sprite):
                 self.rect = self.image.get_rect()
                 self.rect.center = centro
 
+class Ponta_arma(pygame.sprite.Sprite):
+    def __init__(self,posicao, assets):
+        pygame.sprite.Sprite.__init__(self)
+
+        self.ponta_arma = assets['ponta_arma']
+
+        self.frame = 0
+        self.image = self.ponta_arma[self.frame] #Primeira imagem, ja que o frame está em 0 (lembrar de atulizar-lo no update)
+        self.rect = self.image.get_rect(center=posicao)
+          
+
+        self.ultimo_update = pygame.time.get_ticks()
+
+        self.max_ticks = 50
+
+    def update(self):
+        atual = pygame.time.get_ticks()
+
+        passado = atual - self.ultimo_update
+
+        if passado > self.max_ticks:
+            self.ultimo_update = atual
+            self.frame +=1
+
+        if self.frame == len(self.ponta_arma):
+            self.kill()
+        else:
+            centro = self.rect.center
+            self.image = self.ponta_arma[self.frame]
+            self.rect = self.image.get_rect()
+            self.rect.center = centro
         
 ###################################################################################################################################################################################################
         
@@ -186,6 +226,11 @@ for i in range(10):
 #Limitador de FPS
 clock = pygame.time.Clock()
 FPS = 60
+
+
+#Valores de tamanho
+ponta_arma_x = 690
+ponta_arma_y = 600
 
 #Variaveis para serem atualizadas no Game Loop
 pontos = 0
@@ -209,6 +254,9 @@ while game:
             sys.exit() #Sai pela rotina do sistema
         if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == pygame.BUTTON_LEFT:
             som_arma2.play()
+            posicao = (ponta_arma_x, ponta_arma_y)  # Escolha a posição desejada
+            ponta_arma_img = Ponta_arma(posicao, assets)
+            all_passaros.add(ponta_arma_img)
             for passaro in all_passaros:
                 if passaro.rect.collidepoint(evento.pos):
                     passaro.kill()
