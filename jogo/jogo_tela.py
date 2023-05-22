@@ -2,6 +2,9 @@ import pygame
 import sys
 import random
 import time
+from classes import *
+from assets import *
+from parametros import *
 
 #Cores
 AZUL = (0, 0, 255)
@@ -14,8 +17,6 @@ AMARELO = (255, 255, 0)
 #Inicia Pygame e tela + nome da aba
 pygame.init() #Inicialização da biblioteca pygame
 pygame.mixer.init() #Inicialização dos audios da biblioteca pygame
-WINDOW_WIDTH = 1600
-WINDOW_HEIGHT = 900
 window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT)) #Inicial a tela
 pygame.display.set_caption("Calvos-Strike") #Nome da aba
 
@@ -30,26 +31,18 @@ image_tela_inicio = pygame.image.load('assets/img/fundo_inicio.jpg').convert()
 image_backgroud = pygame.image.load('assets/img/fundo 1.jpg').convert()
 
 #Sapiro
-SAPIRO_WIDTH = 170
-SAPIRO_HEIGHT = 170
 image_sapiro = pygame.image.load('assets/img/sapiro.jpg')
 image_sapiro = pygame.transform.scale(image_sapiro, (SAPIRO_WIDTH, SAPIRO_HEIGHT)).convert()
 
 #Zorzi
-ZORZI_WIDHT = 170
-ZORZI_HEIGHT = 170
 image_zorzi = pygame.image.load('assets/img/zorzi.jpg')
 image_zorzi = pygame.transform.scale(image_zorzi,(ZORZI_WIDHT, ZORZI_HEIGHT)).convert()
 
 #Gus
-GUS_WIDHT = 170
-GUS_HEIGHT = 170
 image_gus = pygame.image.load('assets/img/gus.jpg')
 image_gus = pygame.transform.scale(image_gus,(GUS_WIDHT, GUS_HEIGHT)).convert()
 
 #Passaro
-PASSARO_WIDTH = 50
-PASSARO_HEIGHT = 50
 image_passaro1 = pygame.image.load("assets/img/passaro.png").convert_alpha()
 image_passaro1 = pygame.transform.scale(image_passaro1, (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
 
@@ -57,8 +50,6 @@ image_passaro2 = pygame.image.load("assets/img/passaro 2.png").convert_alpha()
 image_passaro2 = pygame.transform.scale(image_passaro1, (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
 
 #Mira 
-MIRA_WIDTH = 70
-MIRA_HEIGHT = 70
 image_mira = pygame.image.load("assets/img/mira.png").convert_alpha()
 image_mira = pygame.transform.scale(image_mira, (MIRA_WIDTH, MIRA_HEIGHT)).convert_alpha()
 mira_rect = image_mira.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2))
@@ -67,22 +58,16 @@ pygame.mouse.set_visible(False)
 
 
 #Arma1
-ARMA1_WIDTH = 400
-ARMA1_HEIGHT = 400
 image_arma1 = pygame.image.load('assets/img/arma1.png').convert_alpha()
 image_arma1 = pygame.transform.scale(image_arma1, (ARMA1_WIDTH, ARMA1_HEIGHT))
 arma1_rect = image_arma1.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.25))
 
 #Arma2
-ARMA2_WIDTH = 400
-ARMA2_HEIGHT = 400
 image_arma2 = pygame.image.load('assets/img/arma2.png').convert_alpha()
 image_arma2 = pygame.transform.scale(image_arma2, (ARMA2_WIDTH, ARMA2_HEIGHT))
 arma2_rect = image_arma2.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.25))
 
 #Arma3
-ARMA3_WIDTH = 400
-ARMA3_HEIGHT = 400
 image_arma3 = pygame.image.load('assets/img/arma3.png').convert_alpha()
 image_arma3 = pygame.transform.scale(image_arma3, (ARMA3_WIDTH, ARMA3_HEIGHT))
 arma3_rect = image_arma3.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.32))
@@ -162,36 +147,7 @@ tela_inicio()
 
 ################################################################################################################################################################################################
 
-########################################################################### Classes ############################################################################################################
-
-#Classe que gera e atualiza os passaros
-class Passaro(pygame.sprite.Sprite):
-    def __init__(self, img):
-        pygame.sprite.Sprite.__init__(self)
-
-        self.image = img 
-        self.rect = self.image.get_rect()
-        self.rect.x = random.choice([0 - PASSARO_WIDTH,WINDOW_WIDTH + PASSARO_WIDTH])
-        self.rect.y = random.choice([100, 180])
-        if self.rect.x == (0 - PASSARO_WIDTH):
-            self.speedx = random.randint(10,15)
-            self.speedy = 0
-        else:
-            self.speedx = random.randint(10,15)
-            self.speedy = 0
-
-    def update(self):
-        self.rect.x += self.speedx
-        self.rect.y += self.speedy
-
-        if self.rect.x > (WINDOW_WIDTH + PASSARO_WIDTH) or self.rect.x < (0 - PASSARO_WIDTH):
-            self.rect.x = random.choice([0 - PASSARO_WIDTH, WINDOW_WIDTH + PASSARO_WIDTH])
-            self.rect.y = random.choice([100, 180])
-            if self.rect.x == (0 - PASSARO_WIDTH):
-                self.speedx = random.randint(10, 15)
-            else:
-                self.speedx = random.randint(-15, -10)
-                self.speedy = 0
+########################################################################### Quantidade #########################################################################################################
 
 assets = {}
 
@@ -219,73 +175,7 @@ for i in range(8):
     ponta_arma.append(img)
 
 assets['ponta_arma'] = ponta_arma
-
-
-class Explosao(pygame.sprite.Sprite):
-    def __init__(self, centro, assets):
-        pygame.sprite.Sprite.__init__(self)
-
-        #Animação da explosão
-        self.explosion_anim = assets['explosion_anim']
-        
-        self.frame = 0
-        self.image = self.explosion_anim[self.frame] #Primeira imagem, ja que o frame está em 0 (lembrar de atulizar-lo no update)
-        self.rect = self.image.get_rect()
-        self.rect.center = centro #Centro da imagem
-
-        self.ultimo_update = pygame.time.get_ticks()
-
-        self.max_ticks = 50
-
-    def update(self):
-        atual = pygame.time.get_ticks()
-
-        passado = atual - self.ultimo_update
-
-        if passado > self.max_ticks:
-            self.ultimo_update = atual
-            self.frame +=1
-
-            if self.frame == len(self.explosion_anim):
-                self.kill()
-            else:
-                centro = self.rect.center
-                self.image = self.explosion_anim[self.frame]
-                self.rect = self.image.get_rect()
-                self.rect.center = centro
-
-class Ponta_arma(pygame.sprite.Sprite):
-    def __init__(self,posicao, assets):
-        pygame.sprite.Sprite.__init__(self)
-
-        self.ponta_arma = assets['ponta_arma']
-
-        self.frame = 0
-        self.image = self.ponta_arma[self.frame] #Primeira imagem, ja que o frame está em 0 (lembrar de atulizar-lo no update)
-        self.rect = self.image.get_rect(center=posicao)
-          
-
-        self.ultimo_update = pygame.time.get_ticks()
-
-        self.max_ticks = 50
-
-    def update(self):
-        atual = pygame.time.get_ticks()
-
-        passado = atual - self.ultimo_update
-
-        if passado > self.max_ticks:
-            self.ultimo_update = atual
-            self.frame +=1
-
-        if self.frame == len(self.ponta_arma):
-            self.kill()
-        else:
-            centro = self.rect.center
-            self.image = self.ponta_arma[self.frame]
-            self.rect = self.image.get_rect()
-            self.rect.center = centro
-        
+      
 ###################################################################################################################################################################################################
         
 #Grupo de passaros
