@@ -38,7 +38,6 @@ ARMA3_WIDTH = 400
 ARMA3_HEIGHT = 400
 
 #Limitador de FPS
-clock = pygame.time.Clock()
 FPS = 60
 
 #Valores de tamanho

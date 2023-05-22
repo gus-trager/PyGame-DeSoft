@@ -106,8 +106,7 @@ def load_assets():
 
     return assets
 
-# Oculta o cursor do mouse
-pygame.mouse.set_visible(False)
+
 
 
 
@@ -117,7 +116,11 @@ assets = load_assets()
 assets['som_ambiente1'].play(-1) #Loop infinito de som ambiente
 
 
-#Grupo de passaros
+
+
+#Grupo de passaros (TEM QUE IR PARA AS FUNCOES DOS NIVEIS)
+clock = pygame.time.Clock()
+
 all_passaros = pygame.sprite.Group()
 
 #Criando vários passasor
