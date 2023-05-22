@@ -1,3 +1,6 @@
+import pygame
+import time
+
 # parâmetros janela
 WINDOW_WIDTH = 1600
 WINDOW_HEIGHT = 900
@@ -34,3 +37,19 @@ ARMA2_HEIGHT = 400
 ARMA3_WIDTH = 400
 ARMA3_HEIGHT = 400
 
+#Limitador de FPS
+clock = pygame.time.Clock()
+FPS = 60
+
+#Valores de tamanho
+ponta_arma_x = 690
+ponta_arma_y = 600
+
+#Variaveis para serem atualizadas no Game Loop
+pontos = 0
+
+tempo_total = 30
+tempo_restante = tempo_total
+tempo_inicial = time.time() #Retorna o tempo atual durante o loop
+
+pontuacao_max_1 = 2000
