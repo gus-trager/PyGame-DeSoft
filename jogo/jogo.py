@@ -17,7 +17,7 @@ pygame.mixer.init() #Inicialização dos audios da biblioteca pygame
 WINDOW_WIDTH = 1600
 WINDOW_HEIGHT = 900
 window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT)) #Inicial a tela
-pygame.display.set_caption("GusGay") #Nome da aba
+pygame.display.set_caption("Calvos-Strike") #Nome da aba
 
 font = pygame.font.SysFont(None, 48)
 
@@ -132,7 +132,7 @@ def tela_inicio():
     window.blit(image_tela_inicio, (0,0))
 
     fonte_tt = pygame.font.Font(fonte_titulo, 80)
-    texto_titulo = fonte_tt.render("Carecas-Strike", True, VERMELHO)
+    texto_titulo = fonte_tt.render("Calvos-Strike", True, VERMELHO)
     texto_titulo_rect = texto_titulo.get_rect(center=(WINDOW_WIDTH//1.37, WINDOW_HEIGHT //6))
 
     fonte_i = pygame.font.Font(fonte_instrucoes, 48)
