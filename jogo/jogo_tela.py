@@ -9,6 +9,7 @@ from tela_transicao import *
 from tela_fase_1 import *
 from tela_fase_2 import *
 from tela_fase_3 import *
+from tela_game_over import *
 
 
 #Inicia Pygame e tela + nome da aba
@@ -23,18 +24,23 @@ pygame.display.set_caption("Calvos-Strike") #Nome da aba
 pygame.mouse.set_visible(False)
 assets = load_assets()
 
+
 lvl = inicio
 while lvl != quit:
     if lvl == inicio:
         lvl = tela_inicio(window)
     if lvl == lvl1:
         lvl = fase_lvl1(window)
-    #if lvl == inter:
-        #lvl = tela_transicao(window)
+    if lvl == inter:
+        lvl = tela_transicao(window)
     if lvl == lvl2:
         lvl = fase_lvl2(window)
     if lvl == lvl3:
         lvl = fase_lvl3(window)
+    if lvl == over:
+        lvl = game_over(window)
+
+    
 
 pygame.quit()
 

@@ -89,7 +89,9 @@ def fase_lvl3(window):
         window.blit(texto_tempo, posicao_tempo)
 
 
-        
+        if pontos == pontuacao_max_3:
+            pontos = 0
+            lvl = over
 
 
         pygame.display.update()
