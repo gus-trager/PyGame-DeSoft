@@ -58,8 +58,8 @@ tempo_restante = tempo_total
 tempo_inicial = time.time() #Retorna o tempo atual durante o loop
 
 pontuacao_max_1 = 1000
-pontuacao_max_2 = 0
-pontuacao_max_3 = 0
+pontuacao_max_2 = 1000
+pontuacao_max_3 = 1000
 
 #Niveis
 inicio = 0

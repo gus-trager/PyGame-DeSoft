@@ -14,7 +14,7 @@ def fase_lvl2(window):
 
     #Criando vários passasor
     for i in range(10):
-        passaro = Passaro(assets['image_passaro1'])
+        passaro = Passaro(assets['image_passaro2'])
         all_passaros.add(passaro)
 
 
@@ -89,7 +89,9 @@ def fase_lvl2(window):
         window.blit(texto_tempo, posicao_tempo)
 
 
-        
+        if pontos == pontuacao_max_2:
+            pontos = 0
+            lvl = lvl3
 
 
         pygame.display.update()
