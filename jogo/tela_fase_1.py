@@ -35,7 +35,7 @@ def fase_lvl1(window):
                 lvl = quit #Fecha o pygame
                 sys.exit() #Sai pela rotina do sistema
             if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == pygame.BUTTON_LEFT:
-                assets['som_arma2'].play()
+                assets['som_arma1'].play()
                 posicao = (ponta_arma_x_lvl_1, ponta_arma_y_lvl_1)  # Escolha a posição desejada
                 ponta_arma_img = Ponta_arma(posicao, assets)
                 all_passaros.add(ponta_arma_img)
@@ -76,7 +76,7 @@ def fase_lvl1(window):
 
         #Desenha a mira e a arma na tela
         window.blit(assets['image_mira'], assets['mira_rect'])
-        window.blit(assets['image_arma2'], assets['arma2_rect'])
+        window.blit(assets['image_arma1'], assets['arma1_rect'])
 
         #Desenha o placar de pontos
         texto_pontos = assets['font'].render("Pontos: " + str(pontos), True, assets['BRANCO'])
@@ -91,7 +91,7 @@ def fase_lvl1(window):
 
         if pontos == pontuacao_max_1:
             pontos = 0
-            lvl = inter
+            lvl = lvl2
 
 
         pygame.display.update()
