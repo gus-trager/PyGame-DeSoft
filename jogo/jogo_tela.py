@@ -5,6 +5,7 @@ from classes import *
 from assets import *
 from parametros import *
 from tela_inicio import *
+from tela_transicao import *
 
 
 #Inicia Pygame e tela + nome da aba
@@ -17,9 +18,20 @@ pygame.display.set_caption("Calvos-Strike") #Nome da aba
 #--------------/------------------------/------------------------------/----------------------/----------------------------/---------------/
 # Oculta o cursor do mouse
 pygame.mouse.set_visible(False)
-
+assets = load_assets()
 
 tela_inicio(window)
+
+
+#Grupo de passaros (TEM QUE IR PARA AS FUNCOES DOS NIVEIS)
+clock = pygame.time.Clock()
+
+all_passaros = pygame.sprite.Group()
+
+#Criando vários passasor
+for i in range(10):
+    passaro = Passaro(assets['image_passaro1'])
+    all_passaros.add(passaro)
 
 
 #Game loop

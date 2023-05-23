@@ -25,6 +25,8 @@ def load_assets():
     assets['image_tela_inicio'] = pygame.image.load('assets/img/fundo_inicio.jpg').convert()
     #Background lvl1
     assets['image_backgroud'] = pygame.image.load('assets/img/fundo 1.jpg').convert()
+    #Backgroud tela de transição
+    assets['image_tela_transicao'] = pygame.image.load('assets/img/Tela transição.png')
     #Sapiro
     assets['image_sapiro'] = pygame.image.load('assets/img/sapiro.jpg')
     assets['image_sapiro'] = pygame.transform.scale(assets['image_sapiro'], (SAPIRO_WIDTH, SAPIRO_HEIGHT)).convert()
@@ -110,20 +112,10 @@ def load_assets():
 
 
 
-assets = load_assets()
 
 
-assets['som_ambiente1'].play(-1) #Loop infinito de som ambiente
+#assets['som_ambiente1'].play(-1) #Loop infinito de som ambiente
 
 
 
 
-#Grupo de passaros (TEM QUE IR PARA AS FUNCOES DOS NIVEIS)
-clock = pygame.time.Clock()
-
-all_passaros = pygame.sprite.Group()
-
-#Criando vários passasor
-for i in range(10):
-    passaro = Passaro(assets['image_passaro1'])
-    all_passaros.add(passaro)
