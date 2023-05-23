@@ -27,7 +27,7 @@ MIRA_HEIGHT = 70
 
 # parâmetros Arma 1
 ARMA1_WIDTH = 400
-ARMA1_HEIGHT = 40
+ARMA1_HEIGHT = 400
 
 # parâmetros Arma 2
 ARMA2_WIDTH = 400
@@ -41,14 +41,14 @@ ARMA3_HEIGHT = 400
 FPS = 60
 
 #Valores de tamanho
-ponta_arma_x_lvl_1 = 690
-ponta_arma_y_lvl_1 = 600
+ponta_arma_x_lvl_1 = 730
+ponta_arma_y_lvl_1 = 575
 
 ponta_arma_x_lvl_2 = 690
-ponta_arma_x_lvl_2 = 600
+ponta_arma_y_lvl_2 = 600
 
-ponta_arma_x_lvl_3 = 0
-ponta_arma_x_lvl_3 = 0
+ponta_arma_x_lvl_3 = 820
+ponta_arma_y_lvl_3 = 730
 
 #Variaveis para serem atualizadas no Game Loop
 pontos = 0

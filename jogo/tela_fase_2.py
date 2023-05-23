@@ -36,7 +36,7 @@ def fase_lvl2(window):
                 sys.exit() #Sai pela rotina do sistema
             if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == pygame.BUTTON_LEFT:
                 assets['som_arma2'].play()
-                posicao = (ponta_arma_x_lvl_1, ponta_arma_y_lvl_1)  # Escolha a posição desejada
+                posicao = (ponta_arma_x_lvl_2, ponta_arma_y_lvl_2)  # Escolha a posição desejada
                 ponta_arma_img = Ponta_arma(posicao, assets)
                 all_passaros.add(ponta_arma_img)
                 for passaro in all_passaros:

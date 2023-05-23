@@ -22,7 +22,6 @@ pygame.display.set_caption("Calvos-Strike") #Nome da aba
 # Oculta o cursor do mouse
 pygame.mouse.set_visible(False)
 assets = load_assets()
-fase_lvl3(window)
 
 lvl = inicio
 while lvl != quit:
