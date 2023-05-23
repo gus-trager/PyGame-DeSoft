@@ -24,9 +24,13 @@ def load_assets():
     #Background tele inicial
     assets['image_tela_inicio'] = pygame.image.load('assets/img/fundo_inicio.jpg').convert()
     #Background lvl1
-    assets['image_backgroud'] = pygame.image.load('assets/img/fundo 1.jpg').convert()
+    assets['image_backgroud_1'] = pygame.image.load('assets/img/fundo 1.jpg').convert()
+    #Background lvl2
+    assets['image_backgroud_2'] = pygame.image.load('assets/img/fundo 2.jpg').convert()
+    #Background lvl3
+    assets['image_backgroud_3'] = pygame.image.load('assets/img/fundo 3.jpg').convert()
     #Backgroud tela de transição
-    assets['image_tela_transicao'] = pygame.image.load('assets/img/Tela transição.png')
+    assets['image_tela_transicao'] = pygame.image.load('assets/img/Tela transição.png').convert()
     #Sapiro
     assets['image_sapiro'] = pygame.image.load('assets/img/sapiro.jpg')
     assets['image_sapiro'] = pygame.transform.scale(assets['image_sapiro'], (SAPIRO_WIDTH, SAPIRO_HEIGHT)).convert()

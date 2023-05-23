@@ -41,8 +41,14 @@ ARMA3_HEIGHT = 400
 FPS = 60
 
 #Valores de tamanho
-ponta_arma_x = 690
-ponta_arma_y = 600
+ponta_arma_x_lvl_1 = 690
+ponta_arma_y_lvl_1 = 600
+
+ponta_arma_x_lvl_2 = 690
+ponta_arma_x_lvl_2 = 600
+
+ponta_arma_x_lvl_3 = 0
+ponta_arma_x_lvl_3 = 0
 
 #Variaveis para serem atualizadas no Game Loop
 pontos = 0
@@ -51,4 +57,17 @@ tempo_total = 30
 tempo_restante = tempo_total
 tempo_inicial = time.time() #Retorna o tempo atual durante o loop
 
-pontuacao_max_1 = 2000
+pontuacao_max_1 = 1000
+pontuacao_max_2 = 0
+pontuacao_max_3 = 0
+
+#Niveis
+inicio = 0
+lvl1 = 1
+lvl2 = 2
+lvl3 = 3
+inter = 4
+over = 5
+quit = 6
+
+

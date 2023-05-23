@@ -31,8 +31,12 @@ def tela_inicio(window):
     while tela_inicio:
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT or (evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE):
-                pygame.quit()
+                lvl = quit
                 sys.exit()
 
             if evento.type == pygame.KEYDOWN:
+                lvl = lvl1
                 tela_inicio = False
+                
+
+    return lvl
