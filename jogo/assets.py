@@ -40,12 +40,26 @@ def load_assets():
     #Gus
     assets['image_gus'] = pygame.image.load('assets/img/gus.jpg')
     assets['image_gus'] = pygame.transform.scale(assets['image_gus'],(GUS_WIDHT, GUS_HEIGHT)).convert()
+    
     #Passaro1
-    assets['image_passaro1'] = pygame.image.load("assets/img/passaro.png").convert_alpha()
+    assets['image_passaro1'] = pygame.image.load("assets/img/passaro 1.png").convert_alpha()
     assets['image_passaro1'] = pygame.transform.scale(assets['image_passaro1'], (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
+    #Passaro1 invertido
+    assets['image_passaro1_in'] = pygame.image.load("assets/img/passaro 1 in.png").convert_alpha()
+    assets['image_passaro1_in'] = pygame.transform.scale(assets['image_passaro2'], (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
     #Passaro2
     assets['image_passaro2'] = pygame.image.load("assets/img/passaro 2.png").convert_alpha()
-    assets['image_passaro2'] = pygame.transform.scale(assets['image_passaro2'], (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
+    assets['image_passaro2'] = pygame.transform.scale(assets['image_passaro1'], (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
+    #Passaro2 invertido
+    assets['image_passaro2_in'] = pygame.image.load("assets/img/passaro 2 in.png").convert_alpha()
+    assets['image_passaro2_in'] = pygame.transform.scale(assets['image_passaro2'], (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
+    #Passaro3
+    assets['image_passaro3'] = pygame.image.load("assets/img/passaro 3.png").convert_alpha()
+    assets['image_passaro3'] = pygame.transform.scale(assets['image_passaro1'], (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
+    #Passaro3 invertido
+    assets['image_passaro3_in'] = pygame.image.load("assets/img/passaro 3 in.png").convert_alpha()
+    assets['image_passaro3_in'] = pygame.transform.scale(assets['image_passaro2'], (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
+    
     #Mira
     assets['image_mira'] = pygame.image.load("assets/img/mira.png").convert_alpha()
     assets['image_mira'] = pygame.transform.scale(assets['image_mira'], (MIRA_WIDTH, MIRA_HEIGHT)).convert_alpha()
