@@ -7,6 +7,7 @@ from parametros import *
 from tela_inicio import *
 from tela_transicao import *
 from tela_fase_1 import *
+from tela_fase_2 import *
 
 
 #Inicia Pygame e tela + nome da aba
@@ -28,8 +29,10 @@ while lvl != quit:
         lvl = tela_inicio(window)
     if lvl == lvl1:
         lvl = fase_lvl1(window)
-    if lvl == inter:
-        lvl = tela_transicao(window)
+    #if lvl == inter:
+        #lvl = tela_transicao(window)
+    if lvl == lvl2:
+        lvl = fase_lvl2(window)
 
 pygame.quit()
 
