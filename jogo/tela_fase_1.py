@@ -91,7 +91,9 @@ def fase_lvl1(window):
 
         if pontos == pontuacao_max_1:
             pontos = 0
-            lvl = lvl2
+            #window.fill((0, 0 ,0))
+            #window.blit(assets['image_tela_transicao'], (0,0))
+            lvl = inter1
 
 
         pygame.display.update()

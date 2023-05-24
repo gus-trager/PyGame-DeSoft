@@ -91,7 +91,7 @@ def fase_lvl2(window):
 
         if pontos == pontuacao_max_2:
             pontos = 0
-            lvl = lvl3
+            lvl = inter2
 
 
         pygame.display.update()
