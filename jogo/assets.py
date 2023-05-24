@@ -29,8 +29,10 @@ def load_assets():
     assets['image_backgroud_2'] = pygame.image.load('assets/img/fundo 2.jpg').convert()
     #Background lvl3
     assets['image_backgroud_3'] = pygame.image.load('assets/img/fundo 3.jpg').convert()
-    #Backgroud tela de transição
-    assets['image_tela_transicao'] = pygame.image.load('assets/img/Tela transição.png').convert()
+    #Backgroud tela de transição 1
+    assets['image_tela_transicao1'] = pygame.image.load('assets/img/Tela transiçã 1.png').convert()
+    #Backgroud tela de transição 2
+    assets['image_tela_transicao2'] = pygame.image.load('assets/img/Tela transição 2.png').convert()
     #Backgroud tela game over
     assets['image_tela_game_over'] = pygame.image.load('assets/img/Tela gameover.png')
     #Background tela vencedor

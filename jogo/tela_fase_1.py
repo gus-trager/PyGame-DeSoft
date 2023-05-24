@@ -93,7 +93,7 @@ def fase_lvl1(window):
             pontos = 0
             #window.fill((0, 0 ,0))
             #window.blit(assets['image_tela_transicao'], (0,0))
-            lvl = inter
+            lvl = inter1
 
 
         pygame.display.update()

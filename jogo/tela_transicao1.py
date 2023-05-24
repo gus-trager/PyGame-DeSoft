@@ -2,12 +2,12 @@ import pygame
 import sys
 from assets import *
 
-def tela_transicao(window):
+def tela_transicao1(window):
     assets = load_assets()
     tela_transicao = True
 
     window.fill((0, 0 ,0)) #Preenche a tela com a cor preta
-    window.blit(assets['image_tela_transicao'], (0,0))
+    window.blit(assets['image_tela_transicao1'], (0,0))
 
     pygame.display.update()
 

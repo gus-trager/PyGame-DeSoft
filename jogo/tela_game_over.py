@@ -10,6 +10,8 @@ def game_over(window):
     window.fill(assets['PRETO'])
     window.blit(assets['image_tela_game_over'], (0,0))
 
+    pygame.display.update()
+    
     lvl = over
     while lvl == over:
         for evento in pygame.event.get():

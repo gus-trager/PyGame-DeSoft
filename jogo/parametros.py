@@ -66,8 +66,9 @@ inicio = 0
 lvl1 = 1
 lvl2 = 2
 lvl3 = 3
-inter = 4
-over = 5
-quit = 6
+inter1 = 4
+inter2 = 5
+over = 6
+quit = 7
 
 
