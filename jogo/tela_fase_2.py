@@ -14,7 +14,7 @@ def fase_lvl2(window):
 
     #Criando vários passasor
     for i in range(10):
-        passaro = Passaro(assets['image_passaro2'])
+        passaro = Passaro([assets['image_passaro2'], assets['image_passaro2_in']])
         all_passaros.add(passaro)
 
 

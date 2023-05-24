@@ -7,9 +7,16 @@ class Passaro(pygame.sprite.Sprite):
     def __init__(self, img):
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = img 
+        self.image = img[0]
+
+        self.list_img = img
+        self.invertido = False
+
         self.rect = self.image.get_rect()
         self.rect.x = random.choice([0 - PASSARO_WIDTH,WINDOW_WIDTH + PASSARO_WIDTH])
+        if self.rect.x == WINDOW_WIDTH + PASSARO_WIDTH:
+            self.image = img[1]
+            self.invertido = True
         self.rect.y = random.choice([100, 180])
         if self.rect.x == (0 - PASSARO_WIDTH):
             self.speedx = random.randint(10,15)
@@ -24,6 +31,14 @@ class Passaro(pygame.sprite.Sprite):
 
         if self.rect.x > (WINDOW_WIDTH + PASSARO_WIDTH) or self.rect.x < (0 - PASSARO_WIDTH):
             self.rect.x = random.choice([0 - PASSARO_WIDTH, WINDOW_WIDTH + PASSARO_WIDTH])
+            
+            if self.invertido and self.rect.x == 0 - PASSARO_WIDTH:
+                self.image = self.list_img[0]
+                self.invertido = False
+            elif not self.invertido and self.rect.x == WINDOW_WIDTH + PASSARO_WIDTH:
+                self.image = self.list_img[1]
+                self.invertido = True
+
             self.rect.y = random.choice([100, 180])
             if self.rect.x == (0 - PASSARO_WIDTH):
                 self.speedx = random.randint(10, 15)
