@@ -40,6 +40,7 @@ def load_assets():
     assets['image_tela_game_over'] = pygame.transform.scale(assets['image_tela_game_over'], (WINDOW_WIDTH, WINDOW_HEIGHT))
     #Background tela vencedor
     assets['image_tela_vencedor'] = pygame.image.load('assets/img/Tela ganhador.png')
+    assets['image_tela_vencedor'] = pygame.transform.scale(assets['image_tela_vencedor'], (WINDOW_WIDTH, WINDOW_HEIGHT))
     #Sapiro
     assets['image_sapiro'] = pygame.image.load('assets/img/sapiro.jpg')
     assets['image_sapiro'] = pygame.transform.scale(assets['image_sapiro'], (SAPIRO_WIDTH, SAPIRO_HEIGHT)).convert()

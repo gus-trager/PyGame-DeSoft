@@ -1,6 +1,4 @@
 import pygame
-import sys
-import time
 from classes import *
 from assets import *
 from parametros import *
@@ -11,6 +9,7 @@ from tela_fase_1 import *
 from tela_fase_2 import *
 from tela_fase_3 import *
 from tela_game_over import *
+from tela_vencedor import *
 
 
 #Inicia Pygame e tela + nome da aba
@@ -42,6 +41,8 @@ while lvl != quit:
         lvl = fase_lvl3(window)
     if lvl == over:
         lvl = game_over(window)
+    if lvl == win:
+        lvl = vencedor(window)
 
     
 

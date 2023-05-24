@@ -69,6 +69,7 @@ lvl3 = 3
 inter1 = 4
 inter2 = 5
 over = 6
-quit = 7
+win = 7
+quit = 8
 
 

@@ -91,6 +91,8 @@ def fase_lvl3(window):
 
         if pontos == pontuacao_max_3:
             pontos = 0
+            lvl = win
+        if tempo_restante == 0:
             lvl = over
 
 
