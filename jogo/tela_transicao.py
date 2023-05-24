@@ -9,15 +9,17 @@ def tela_transicao(window):
     window.fill((0, 0 ,0)) #Preenche a tela com a cor preta
     window.blit(assets['image_tela_transicao'], (0,0))
 
+    pygame.display.update()
+
     while tela_transicao:
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT or (evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE):
                 lvl = quit
-                sys.exit()
+                #sys.exit()
 
-            if evento.type == pygame.KEYDOWN and evento.key == pygame.K_KP_ENTER:
+            if evento.type == pygame.KEYDOWN and evento.key == pygame.K_e:
                 tela_transicao = False
-                lvl = lvl1
+                lvl = lvl2
 
     
     

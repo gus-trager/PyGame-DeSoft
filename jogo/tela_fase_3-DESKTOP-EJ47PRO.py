@@ -4,7 +4,7 @@ from assets import *
 from parametros import *
 
 
-def fase_lvl1(window):
+def fase_lvl3(window):
 
     clock = pygame.time.Clock()
 
@@ -14,16 +14,16 @@ def fase_lvl1(window):
 
     #Criando vários passasor
     for i in range(10):
-        passaro = Passaro(assets['image_passaro1'])
+        passaro = Passaro(assets['image_passaro3'])
         all_passaros.add(passaro)
 
 
     tempo_restante = 30
     pontos = 0
     
-    lvl = lvl1
+    lvl = lvl3
 
-    while lvl == lvl1:
+    while lvl == lvl3:
         clock.tick(FPS)
 
         
@@ -35,8 +35,8 @@ def fase_lvl1(window):
                 lvl = quit #Fecha o pygame
                 sys.exit() #Sai pela rotina do sistema
             if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == pygame.BUTTON_LEFT:
-                assets['som_arma1'].play()
-                posicao = (ponta_arma_x_lvl_1, ponta_arma_y_lvl_1)  # Escolha a posição desejada
+                assets['som_arma3'].play()
+                posicao = (ponta_arma_x_lvl_3, ponta_arma_y_lvl_3)  # Escolha a posição desejada
                 ponta_arma_img = Ponta_arma(posicao, assets)
                 all_passaros.add(ponta_arma_img)
                 for passaro in all_passaros:
@@ -69,14 +69,14 @@ def fase_lvl1(window):
 
 
         window.fill((0, 0 ,0)) #Preenche a tela com a cor preta
-        window.blit(assets['image_backgroud_1'], (0,0)) #Depois preenche com o backgroud
+        window.blit(assets['image_backgroud_3'], (0,0)) #Depois preenche com o backgroud
 
         #Desenha os passaros na tela
         all_passaros.draw(window)
 
         #Desenha a mira e a arma na tela
         window.blit(assets['image_mira'], assets['mira_rect'])
-        window.blit(assets['image_arma1'], assets['arma1_rect'])
+        window.blit(assets['image_arma3'], assets['arma3_rect'])
 
         #Desenha o placar de pontos
         texto_pontos = assets['font'].render("Pontos: " + str(pontos), True, assets['BRANCO'])
@@ -89,14 +89,11 @@ def fase_lvl1(window):
         window.blit(texto_tempo, posicao_tempo)
 
 
-        if pontos == pontuacao_max_1:
+        if pontos == pontuacao_max_3:
             pontos = 0
-            #window.fill((0, 0 ,0))
-            #window.blit(assets['image_tela_transicao'], (0,0))
-            lvl = inter
+            lvl = over
 
 
         pygame.display.update()
 
     return lvl
-
