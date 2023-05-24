@@ -30,11 +30,14 @@ def load_assets():
     #Background lvl3
     assets['image_backgroud_3'] = pygame.image.load('assets/img/fundo 3.jpg').convert()
     #Backgroud tela de transição 1
-    assets['image_tela_transicao1'] = pygame.image.load('assets/img/Tela transição 1.png').convert()
+    assets['image_tela_transicao1'] = pygame.image.load('assets/img/Tela transição 1.png').convert_alpha()
+    assets['image_tela_transicao1'] = pygame.transform.scale(assets['image_tela_transicao1'], (WINDOW_WIDTH, WINDOW_HEIGHT)).convert_alpha()
     #Backgroud tela de transição 2
-    assets['image_tela_transicao2'] = pygame.image.load('assets/img/Tela transição 2.png').convert()
+    assets['image_tela_transicao2'] = pygame.image.load('assets/img/Tela transição 2.png').convert_alpha()
+    assets['image_tela_transicao2'] = pygame.transform.scale(assets['image_tela_transicao2'], (WINDOW_WIDTH, WINDOW_HEIGHT)).convert_alpha()
     #Backgroud tela game over
-    assets['image_tela_game_over'] = pygame.image.load('assets/img/Tela gameover.png')
+    assets['image_tela_game_over'] = pygame.image.load('assets/img/Tela gameover.png').convert_alpha()
+    assets['image_tela_game_over'] = pygame.transform.scale(assets['image_tela_game_over'], (WINDOW_WIDTH, WINDOW_HEIGHT))
     #Background tela vencedor
     assets['image_tela_vencedor'] = pygame.image.load('assets/img/Tela ganhador.png')
     #Sapiro
