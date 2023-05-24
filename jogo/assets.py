@@ -21,7 +21,7 @@ def load_assets():
     assets['VERDE'] = VERDE
     assets['VERMELHO'] = VERMELHO
     assets['AMARELO'] = AMARELO
-    #Background tele inicial
+    #Background tela inicial
     assets['image_tela_inicio'] = pygame.image.load('assets/img/fundo_inicio.jpg').convert()
     #Background lvl1
     assets['image_backgroud_1'] = pygame.image.load('assets/img/fundo 1.jpg').convert()
@@ -31,6 +31,10 @@ def load_assets():
     assets['image_backgroud_3'] = pygame.image.load('assets/img/fundo 3.jpg').convert()
     #Backgroud tela de transição
     assets['image_tela_transicao'] = pygame.image.load('assets/img/Tela transição.png').convert()
+    #Backgroud tela game over
+    assets['image_tela_game_over'] = pygame.image.load('assets/img/Tela gameover.png')
+    #Background tela vencedor
+    assets['image_tela_vencedor'] = pygame.image.load('assets/img/Tela ganhador.png')
     #Sapiro
     assets['image_sapiro'] = pygame.image.load('assets/img/sapiro.jpg')
     assets['image_sapiro'] = pygame.transform.scale(assets['image_sapiro'], (SAPIRO_WIDTH, SAPIRO_HEIGHT)).convert()
