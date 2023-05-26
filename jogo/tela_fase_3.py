@@ -10,6 +10,9 @@ def fase_lvl3(window):
 
     assets = load_assets()
 
+    assets['som_ambiente2'].stop()
+    assets['som_ambiente3'].play()
+
     all_passaros = pygame.sprite.Group()
 
     #Criando vários passasor

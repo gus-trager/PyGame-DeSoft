@@ -86,12 +86,13 @@ def load_assets():
     assets['image_arma3'] = pygame.image.load('assets/img/arma3.png').convert_alpha()
     assets['image_arma3'] = pygame.transform.scale(assets['image_arma3'], (ARMA3_WIDTH, ARMA3_HEIGHT))
     assets['arma3_rect'] = assets['image_arma3'].get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.32))
+   
     #Som ambiente1
     assets['som_ambiente1'] = pygame.mixer.Sound('assets/sounds/som ambiente 1.mp3')
     #Som ambiente2
-
+    assets['som_ambiente2'] = pygame.mixer.Sound('assets/sounds/som ambiente 2.mp3')
     #Som ambiente3
-
+    assets['som_ambiente3'] = pygame.mixer.Sound('assets/sounds/som ambiente 3.wav')
     #Som tela de inicio
 
     #Som arma1
