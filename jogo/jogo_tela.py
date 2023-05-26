@@ -1,15 +1,14 @@
 import pygame
-from classes import *
-from assets import *
-from parametros import *
-from tela_inicio import *
-from tela_transicao1 import *
-from tela_transicao2 import *
-from tela_fase_1 import *
-from tela_fase_2 import *
-from tela_fase_3 import *
-from tela_game_over import *
-from tela_vencedor import *
+import time
+from parametros import WINDOW_WIDTH, WINDOW_HEIGHT, lvl1, lvl2, lvl3, inicio, inter1, inter2, over, win
+from tela_inicio import tela_inicio
+from tela_transicao1 import tela_transicao1
+from tela_transicao2 import tela_transicao2
+from tela_fase_1 import fase_lvl1
+from tela_fase_2 import fase_lvl2
+from tela_fase_3 import fase_lvl3
+from tela_game_over import game_over
+from tela_vencedor import vencedor
 
 
 #Inicia Pygame e tela + nome da aba
@@ -22,7 +21,7 @@ pygame.display.set_caption("Calvos-Strike") #Nome da aba
 #--------------/------------------------/------------------------------/----------------------/----------------------------/---------------/
 # Oculta o cursor do mouse
 pygame.mouse.set_visible(False)
-assets = load_assets()
+
 
 
 lvl = inicio
@@ -30,7 +29,7 @@ while lvl != quit:
     if lvl == inicio:
         lvl = tela_inicio(window)
     if lvl == lvl1:
-        lvl = fase_lvl1(window)
+        lvl = fase_lvl1(window)    
     if lvl == inter1:
         lvl = tela_transicao1(window)
     if lvl == inter2:

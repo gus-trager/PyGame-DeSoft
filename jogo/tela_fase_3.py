@@ -14,11 +14,14 @@ def fase_lvl3(window):
     assets['som_ambiente3'].play()
 
     all_passaros = pygame.sprite.Group()
+    all_sprites = pygame.sprite.Group()
+    
 
     #Criando vários passasor
     for i in range(10):
         passaro = Passaro([assets['image_passaro3'], assets['image_passaro3_in']])
         all_passaros.add(passaro)
+        all_sprites.add(passaro)
 
 
     tempo_restante = 30
@@ -41,7 +44,7 @@ def fase_lvl3(window):
                 assets['som_arma3'].play()
                 posicao = (ponta_arma_x_lvl_3, ponta_arma_y_lvl_3)  # Escolha a posição desejada
                 ponta_arma_img = Ponta_arma(posicao, assets)
-                all_passaros.add(ponta_arma_img)
+                all_sprites.add(ponta_arma_img)
                 for passaro in all_passaros:
                     if passaro.rect.collidepoint(evento.pos):
                         passaro.kill()
@@ -49,10 +52,10 @@ def fase_lvl3(window):
                         assets['som_score'].play()
                         
                         explosao = Explosao(passaro.rect.center, assets)
-                        all_passaros.add(explosao)
+                        all_sprites.add(explosao)
         
         #Atualiza a posição dos pássaros
-        all_passaros.update()
+        all_sprites.update()
 
 
 
@@ -75,7 +78,7 @@ def fase_lvl3(window):
         window.blit(assets['image_backgroud_3'], (0,0)) #Depois preenche com o backgroud
 
         #Desenha os passaros na tela
-        all_passaros.draw(window)
+        all_sprites.draw(window)
 
         #Desenha a mira e a arma na tela
         window.blit(assets['image_mira'], assets['mira_rect'])

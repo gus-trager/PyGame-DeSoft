@@ -1,5 +1,4 @@
 import pygame
-from parametros import *
 from classes import *
 
 

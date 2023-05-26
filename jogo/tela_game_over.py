@@ -1,7 +1,6 @@
 import pygame
 import sys
 from assets import *
-from parametros import *
 
 def game_over(window):
     assets = load_assets()
