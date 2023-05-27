@@ -3,7 +3,7 @@ import random
 from parametros import *
 
 #Classe que gera e atualiza os passaros
-class Passaro(pygame.sprite.Sprite):
+class Passaro1(pygame.sprite.Sprite):
     def __init__(self, img):
         pygame.sprite.Sprite.__init__(self)
 
@@ -45,6 +45,118 @@ class Passaro(pygame.sprite.Sprite):
             else:
                 self.speedx = random.randint(-15, -10)
                 self.speedy = 0
+
+
+class Passaro2(pygame.sprite.Sprite):
+    def __init__(self, img):
+        pygame.sprite.Sprite.__init__(self)
+
+        self.image_esquerda = img[1]
+        self.image_direita = img[0]
+        self.rect = self.image_esquerda.get_rect()
+
+        side = random.choice(["left", "right"])  # Escolha aleatoriamente o lado de onde o pássaro aparecerá
+        if side == "left":
+            self.rect.x = 0 - PASSARO_WIDTH
+            self.speedx = random.randint(10, 15)
+            self.image = self.image_direita  # Pássaro movendo-se da esquerda para a direita
+        else:
+            self.rect.x = WINDOW_WIDTH + PASSARO_WIDTH
+            self.speedx = random.randint(-15, -10)
+            self.image = self.image_esquerda  # Pássaro movendo-se da direita para a esquerda
+
+        self.rect.y = random.choice([100, 180])
+        self.speedy = random.randint(-5, 5)
+
+    def update(self):
+        self.rect.x += self.speedx
+        self.rect.y += self.speedy
+
+        if self.rect.x > (WINDOW_WIDTH + PASSARO_WIDTH) or self.rect.x < (0 - PASSARO_WIDTH):
+            side = random.choice(["left", "right"])  # Escolha aleatoriamente o lado de onde o pássaro aparecerá
+            if side == "left":
+                self.rect.x = 0 - PASSARO_WIDTH
+                self.speedx = random.randint(10, 15)
+                self.image = self.image_direita  # Pássaro movendo-se da esquerda para a direita
+            else:
+                self.rect.x = WINDOW_WIDTH + PASSARO_WIDTH
+                self.speedx = random.randint(-15, -10)
+                self.image = self.image_esquerda  # Pássaro movendo-se da direita para a esquerda
+
+            self.rect.y = random.choice([100, 180])
+            self.speedy = random.randint(-5, 5)
+
+class Passaro3(pygame.sprite.Sprite):
+    def __init__(self, img):
+        pygame.sprite.Sprite.__init__(self)
+
+        self.image_esquerda = img[1]
+        self.image_direita = img[0]
+        self.rect = self.image_esquerda.get_rect()
+
+        side = random.choice(["left", "right"])  # Escolha aleatoriamente o lado de onde o pássaro aparecerá
+        if side == "left":
+            self.rect.x = 0 - PASSARO_WIDTH
+            self.speedx = random.randint(10, 15)
+            self.image = self.image_direita  # Pássaro movendo-se da esquerda para a direita
+        else:
+            self.rect.x = WINDOW_WIDTH + PASSARO_WIDTH
+            self.speedx = random.randint(-15, -10)
+            self.image = self.image_esquerda  # Pássaro movendo-se da direita para a esquerda
+
+        self.rect.y = random.choice([100, 180])
+        self.speedy = random.randint(-7, 7)
+
+    def update(self):
+        self.rect.x += self.speedx
+        self.rect.y += self.speedy
+
+        if self.rect.x > (WINDOW_WIDTH + PASSARO_WIDTH) or self.rect.x < (0 - PASSARO_WIDTH):
+            side = random.choice(["left", "right"])  # Escolha aleatoriamente o lado de onde o pássaro aparecerá
+            if side == "left":
+                self.rect.x = 0 - PASSARO_WIDTH
+                self.speedx = random.randint(10, 15)
+                self.image = self.image_direita  # Pássaro movendo-se da esquerda para a direita
+            else:
+                self.rect.x = WINDOW_WIDTH + PASSARO_WIDTH
+                self.speedx = random.randint(-15, -10)
+                self.image = self.image_esquerda  # Pássaro movendo-se da direita para a esquerda
+
+            self.rect.y = random.choice([100, 180])
+            self.speedy = random.randint(-7, 7)
+
+
+# Manga
+class Manga(pygame.sprite.Sprite):
+    def __init__(self, img):
+        pygame.sprite.Sprite.__init__(self)
+
+        self.image = img
+        self.rect = self.image.get_rect()
+
+        self.rect.x = random.choice([0 - PASSARO_WIDTH, WINDOW_WIDTH + PASSARO_WIDTH])
+        if self.rect.x == WINDOW_WIDTH + PASSARO_WIDTH:
+            self.speedx = random.randint(-15, -10)
+        else:
+            self.speedx = random.randint(10, 15)
+
+        self.rect.y = random.choice([100, 180])
+        self.speedy = random.randint(-5, 5)
+
+    def update(self):
+        self.rect.x += self.speedx
+        self.rect.y += self.speedy
+
+        if self.rect.x > (WINDOW_WIDTH + PASSARO_WIDTH) or self.rect.x < (0 - PASSARO_WIDTH):
+            self.rect.x = random.choice([0 - PASSARO_WIDTH, WINDOW_WIDTH + PASSARO_WIDTH])
+
+            if self.rect.x == 0 - PASSARO_WIDTH:
+                self.speedx = random.randint(10, 15)
+            else:
+                self.speedx = random.randint(-15, -10)
+
+            self.rect.y = random.choice([100, 180])
+            self.speedy = random.randint(-5, 5)
 
 #Classe que gera e atualiza as explosões
 

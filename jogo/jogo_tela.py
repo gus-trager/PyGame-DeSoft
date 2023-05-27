@@ -1,6 +1,6 @@
 import pygame
 import time
-from parametros import WINDOW_WIDTH, WINDOW_HEIGHT, lvl1, lvl2, lvl3, inicio, inter1, inter2, over, win
+from parametros import WINDOW_WIDTH, WINDOW_HEIGHT, lvl1, lvl2, lvl3, inicio, inter1, inter2, over, win, QUIT
 from tela_inicio import tela_inicio
 from tela_transicao1 import tela_transicao1
 from tela_transicao2 import tela_transicao2
@@ -25,7 +25,7 @@ pygame.mouse.set_visible(False)
 
 
 lvl = inicio
-while lvl != quit:
+while lvl != QUIT:
     if lvl == inicio:
         lvl = tela_inicio(window)
     if lvl == lvl1:

@@ -68,6 +68,9 @@ def load_assets():
     #Passaro3 invertido
     assets['image_passaro3_in'] = pygame.image.load("assets/img/passaro 3 in.png").convert_alpha()
     assets['image_passaro3_in'] = pygame.transform.scale(assets['image_passaro3_in'], (PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha()
+    #Manga
+    assets['image_manga'] = pygame.image.load("assets/img/manga.png")
+    assets['image_manga'] = pygame.transform.scale(assets['image_manga'],(PASSARO_WIDTH, PASSARO_HEIGHT)).convert_alpha() 
     
     #Mira
     assets['image_mira'] = pygame.image.load("assets/img/mira.png").convert_alpha()
@@ -99,9 +102,13 @@ def load_assets():
     #Som arma2
     assets['som_arma2'] = pygame.mixer.Sound('assets/sounds/tiro arma2.mp3')
     #Som arma3
-    assets['som_arma3'] = pygame.mixer.Sound(('assets/sounds/tiro arma3.mp3'))
+    assets['som_arma3'] = pygame.mixer.Sound('assets/sounds/tiro arma3.mp3')
     #Som score
     assets['som_score'] = pygame.mixer.Sound('assets/sounds/score2.wav')
+    #Zé da manga
+    assets['ze_da_manga'] = pygame.mixer.Sound('assets/sounds/zé da manga.mp3')
+
+
     #Fonte padrão
     assets['font'] = pygame.font.SysFont(None, 48)
     # Fonte do Titulo do jogo

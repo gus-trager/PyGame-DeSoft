@@ -16,7 +16,7 @@ def vencedor(window):
     while lvl == win:
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT or (evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE):
-                lvl = quit
+                lvl = QUIT
                 pygame.quit()
                 #sys.exit()
 

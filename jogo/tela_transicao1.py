@@ -14,7 +14,7 @@ def tela_transicao1(window):
     while tela_transicao:
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT or (evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE):
-                lvl = quit
+                lvl = QUIT
                 #sys.exit()
 
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_e:

@@ -18,14 +18,17 @@ def fase_lvl3(window):
     
 
     #Criando vários passasor
-    for i in range(10):
-        passaro = Passaro([assets['image_passaro3'], assets['image_passaro3_in']])
+    for i in range(20):
+        passaro = Passaro3([assets['image_passaro3'], assets['image_passaro3_in']])
         all_passaros.add(passaro)
         all_sprites.add(passaro)
 
+    manga = Manga(assets['image_manga'])
+    all_sprites.add(manga)
+
 
     tempo_restante = 30
-    pontos = 0
+    pontos = pontuacao_max_2
     
     lvl = lvl3
 
@@ -38,7 +41,7 @@ def fase_lvl3(window):
         eventos = pygame.event.get() #Variavel para acessar os eventos do teclado/mouse
         for evento in eventos:
             if evento.type == pygame.QUIT or (evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE):
-                lvl = quit #Fecha o pygame
+                lvl = QUIT #Fecha o pygame
                 sys.exit() #Sai pela rotina do sistema
             if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == pygame.BUTTON_LEFT:
                 assets['som_arma3'].play()
@@ -53,6 +56,11 @@ def fase_lvl3(window):
                         
                         explosao = Explosao(passaro.rect.center, assets)
                         all_sprites.add(explosao)
+                if manga.rect.collidepoint(evento.pos):
+                    manga.kill()
+                    pontos +=500
+                    assets['ze_da_manga'].play()
+
         
         #Atualiza a posição dos pássaros
         all_sprites.update()
@@ -98,8 +106,10 @@ def fase_lvl3(window):
         if pontos == pontuacao_max_3:
             pontos = 0
             lvl = win
+            pygame.mixer.stop()
         if tempo_restante == 0:
             lvl = over
+            pygame.mixer.stop()
 
 
         pygame.display.update()

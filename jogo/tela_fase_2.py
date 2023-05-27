@@ -18,13 +18,13 @@ def fase_lvl2(window):
 
     #Criando vários passasor
     for i in range(10):
-        passaro = Passaro([assets['image_passaro2'], assets['image_passaro2_in']])
+        passaro = Passaro2([assets['image_passaro2'], assets['image_passaro2_in']])
         all_passaros.add(passaro)
         all_sprites.add(passaro)
 
 
     tempo_restante = 30
-    pontos = 0
+    pontos = pontuacao_max_1
     
     lvl = lvl2
 
@@ -37,7 +37,7 @@ def fase_lvl2(window):
         eventos = pygame.event.get() #Variavel para acessar os eventos do teclado/mouse
         for evento in eventos:
             if evento.type == pygame.QUIT or (evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE):
-                lvl = quit #Fecha o pygame
+                lvl = QUIT #Fecha o pygame
                 sys.exit() #Sai pela rotina do sistema
             if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == pygame.BUTTON_LEFT:
                 assets['som_arma2'].play()
@@ -95,10 +95,12 @@ def fase_lvl2(window):
 
 
         if pontos == pontuacao_max_2:
-            pontos = 0
+            pontos = pontuacao_max_2
             lvl = inter2
+            pygame.mixer.stop()
         if tempo_restante == 0:
             lvl = over
+            pygame.mixer.stop()
 
         pygame.display.update()
 
