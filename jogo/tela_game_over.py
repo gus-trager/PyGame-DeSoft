@@ -1,12 +1,13 @@
 import pygame
 import sys
-from assets import *
+from parametros import WINDOW_HEIGHT, WINDOW_WIDTH, QUIT, lvl1, over
 
 def game_over(window):
-    assets = load_assets()
+    image_tela_game_over = pygame.image.load('assets/img/Tela gameover.png').convert_alpha()
+    image_tela_game_over = pygame.transform.scale(image_tela_game_over, (WINDOW_WIDTH, WINDOW_HEIGHT))
 
-    window.fill(assets['PRETO'])
-    window.blit(assets['image_tela_game_over'], (0,0))
+    window.fill((0,0,0))
+    window.blit(image_tela_game_over, (0,0))
 
     pygame.display.update()
     

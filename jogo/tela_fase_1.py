@@ -95,12 +95,11 @@ def fase_lvl1(window,tempo_inicial):
 
 
         if pontos == pontuacao_max_1:
-            pontos = ponta_arma_x_lvl_1
             lvl = inter1
-            pygame.mixer.stop()
+            assets['som_ambiente1'].stop()
         if tempo_restante == 0:
             lvl = over
-            pygame.mixer.stop()
+            assets['som_ambiente1'].stop()
 
 
         pygame.display.update()

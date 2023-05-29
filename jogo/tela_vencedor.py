@@ -1,14 +1,15 @@
 import pygame
 import sys
-from assets import *
+from parametros import WINDOW_HEIGHT, WINDOW_WIDTH, win, QUIT, lvl1
 
 
 def vencedor(window):
-    assets = load_assets()
-    assets['som_arma3'].stop()
+    
+    image_tela_vencedor = pygame.image.load('assets/img/Tela ganhador.png')
+    image_tela_vencedor = pygame.transform.scale(image_tela_vencedor, (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     window.fill((0, 0, 0))
-    window.blit(assets['image_tela_vencedor'], (0,0))
+    window.blit(image_tela_vencedor, (0,0))
 
     pygame.display.update()
 

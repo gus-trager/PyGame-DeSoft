@@ -1,13 +1,15 @@
 import pygame
 import sys
-from assets import *
+from parametros import WINDOW_HEIGHT, WINDOW_WIDTH, QUIT, lvl3
 
 def tela_transicao2(window):
-    assets = load_assets()
     tela_transicao = True
 
+    image_tela_transicao2 = pygame.image.load('assets/img/Tela transição 2.png').convert_alpha()
+    image_tela_transicao2 = pygame.transform.scale(image_tela_transicao2 , (WINDOW_WIDTH, WINDOW_HEIGHT)).convert_alpha()
+
     window.fill((0, 0 ,0)) #Preenche a tela com a cor preta
-    window.blit(assets['image_tela_transicao2'], (0,0))
+    window.blit(image_tela_transicao2, (0,0))
 
     pygame.display.update()
 
@@ -15,6 +17,7 @@ def tela_transicao2(window):
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT or (evento.type == pygame.KEYDOWN and evento.key == pygame.K_ESCAPE):
                 lvl = QUIT
+                tela_transicao = False
                 #sys.exit()
 
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_e:

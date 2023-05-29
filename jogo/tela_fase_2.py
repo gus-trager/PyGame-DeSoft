@@ -11,7 +11,7 @@ def fase_lvl2(window,tempo_inicial):
 
     assets = load_assets()
 
-    assets['som_ambiente1'].stop()
+    
     assets['som_ambiente2'].play()
 
     all_passaros = pygame.sprite.Group()
@@ -95,12 +95,11 @@ def fase_lvl2(window,tempo_inicial):
 
 
         if pontos == pontuacao_max_2:
-            pontos = pontuacao_max_2
             lvl = inter2
-            pygame.mixer.stop()
+            assets['som_ambiente2'].stop()
         if tempo_restante == 0:
             lvl = over
-            pygame.mixer.stop()
+            assets['som_ambiente2'].stop()
 
         pygame.display.update()
 
