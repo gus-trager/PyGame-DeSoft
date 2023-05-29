@@ -87,7 +87,7 @@ def load_assets():
     #Arma3
     assets['image_arma3'] = pygame.image.load('assets/img/arma3.png').convert_alpha()
     assets['image_arma3'] = pygame.transform.scale(assets['image_arma3'], (ARMA3_WIDTH, ARMA3_HEIGHT))
-    assets['arma3_rect'] = assets['image_arma3'].get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.32))
+    assets['arma3_rect'] = assets['image_arma3'].get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 1.10))
    
     #Som ambiente1
     assets['som_ambiente1'] = pygame.mixer.Sound('assets/sounds/som ambiente 1.mp3')

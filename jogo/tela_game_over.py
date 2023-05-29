@@ -20,6 +20,4 @@ def game_over(window):
             if evento.type == pygame.KEYDOWN and evento.key == pygame.K_e:
                 lvl = lvl1
                 
-                
-
     return lvl

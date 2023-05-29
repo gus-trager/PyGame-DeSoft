@@ -1,4 +1,3 @@
-import pygame
 import time
 
 # parâmetros janela
@@ -47,15 +46,14 @@ ponta_arma_y_lvl_1 = 575
 ponta_arma_x_lvl_2 = 690
 ponta_arma_y_lvl_2 = 600
 
-ponta_arma_x_lvl_3 = 820
-ponta_arma_y_lvl_3 = 730
+ponta_arma_x_lvl_3 = 770
+ponta_arma_y_lvl_3 = 690
 
 #Variaveis para serem atualizadas no Game Loop
 pontos = 0
 
-tempo_total = 30
+tempo_total = 15
 tempo_restante = tempo_total
-tempo_inicial = time.time() #Retorna o tempo atual durante o loop
 
 pontuacao_max_1 = 1000
 pontuacao_max_2 = 2000

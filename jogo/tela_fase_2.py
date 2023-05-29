@@ -4,7 +4,7 @@ from assets import *
 from parametros import *
 
 
-def fase_lvl2(window):
+def fase_lvl2(window,tempo_inicial):
 
     clock = pygame.time.Clock()
     all_sprites = pygame.sprite.Group()
