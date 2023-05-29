@@ -106,7 +106,7 @@ def load_assets():
     #Som score
     assets['som_score'] = pygame.mixer.Sound('assets/sounds/score2.wav')
     #Zé da manga
-    assets['ze_da_manga'] = pygame.mixer.Sound('assets/sounds/zé da manga.mp3')
+    assets['ze_da_manga'] = pygame.mixer.Sound('assets/sounds/ze da manga.mp3')
 
 
     #Fonte padrão
