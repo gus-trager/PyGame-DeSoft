@@ -13,19 +13,19 @@ class Passaro1(pygame.sprite.Sprite):
         self.invertido = False
 
         self.rect = self.image.get_rect()
-        self.rect.x = random.choice([0 - PASSARO_WIDTH,WINDOW_WIDTH + PASSARO_WIDTH])
+        self.rect.x = random.choice([0 - PASSARO_WIDTH,WINDOW_WIDTH + PASSARO_WIDTH]) #rect do passaro
         if self.rect.x == WINDOW_WIDTH + PASSARO_WIDTH:
             self.image = img[1]
             self.invertido = True
-        self.rect.y = random.choice([100, 180])
+        self.rect.y = random.choice([100, 180]) 
         if self.rect.x == (0 - PASSARO_WIDTH):
-            self.speedx = random.randint(10,15)
+            self.speedx = random.randint(10,15) 
             self.speedy = 0
         else:
             self.speedx = random.randint(10,15)
             self.speedy = 0
 
-    def update(self):
+    def update(self): #update da posição do pássaro
         self.rect.x += self.speedx
         self.rect.y += self.speedy
 
@@ -142,7 +142,7 @@ class Manga(pygame.sprite.Sprite):
 
         self.rect.y = random.choice([100, 180])
         self.speedy = random.randint(-5, 5)
-
+    #update do objeto da manga
     def update(self):
         self.rect.x += self.speedx
         self.rect.y += self.speedy

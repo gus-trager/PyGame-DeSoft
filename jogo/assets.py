@@ -112,9 +112,12 @@ def load_assets():
     # Fonte do Instrucoes do jogo
     assets['fonte_instrucoes'] = 'assets/img/fonte instrucoes.TTF'
 
+    #listas de animação da explosão 
     explosion_anim = []
+    # lista de animação da ponta da arma
     ponta_arma = []
 
+    #Código da animação da arma e explosão
     for i in range(10):
         filename = 'assets/img/explosao0{}.png'.format(i)
         img = pygame.image.load(filename)
