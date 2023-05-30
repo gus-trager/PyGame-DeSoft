@@ -1,7 +1,7 @@
 import pygame
 import sys
 from parametros import WINDOW_HEIGHT, WINDOW_WIDTH, QUIT, lvl3
-
+#função da tela de transição
 def tela_transicao2(window):
     tela_transicao = True
 
@@ -9,7 +9,7 @@ def tela_transicao2(window):
     image_tela_transicao2 = pygame.transform.scale(image_tela_transicao2 , (WINDOW_WIDTH, WINDOW_HEIGHT)).convert_alpha()
 
     window.fill((0, 0 ,0)) #Preenche a tela com a cor preta
-    window.blit(image_tela_transicao2, (0,0))
+    window.blit(image_tela_transicao2, (0,0)) #posição da imagem 
 
     pygame.display.update()
 

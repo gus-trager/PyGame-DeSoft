@@ -15,13 +15,13 @@ def tela_inicio(window):
     texto_titulo = fonte_tt.render("Calvos-Strike", True, assets['VERMELHO']) #Nome e cor do texto
     texto_titulo_rect = texto_titulo.get_rect(center=(WINDOW_WIDTH//1.37, WINDOW_HEIGHT //6)) #tamanho do titulo
 
-    fonte_i = pygame.font.Font(assets['fonte_instrucoes'], 48)
-    texto_intrucoes = fonte_i.render("Pressione qualquer tecla para jogar", True, assets['VERMELHO'])
-    texto_intrucoes_rect = texto_intrucoes.get_rect(center=(WINDOW_WIDTH//2, WINDOW_HEIGHT //1.1))
+    fonte_i = pygame.font.Font(assets['fonte_instrucoes'], 48) #tamanho do texto
+    texto_intrucoes = fonte_i.render("Pressione qualquer tecla para jogar", True, assets['VERMELHO']) #texto e cor das instruções
+    texto_intrucoes_rect = texto_intrucoes.get_rect(center=(WINDOW_WIDTH//2, WINDOW_HEIGHT //1.1))#posicao das instrucoes
     
     window.blit(texto_titulo, texto_titulo_rect)
     window.blit(texto_intrucoes, texto_intrucoes_rect)
-
+    #imagens e onde estão
     window.blit(assets['image_sapiro'], (WINDOW_WIDTH//1.8, WINDOW_HEIGHT //3.5))
     window.blit(assets['image_zorzi'], (WINDOW_WIDTH//1.47, WINDOW_HEIGHT //3.5))
     window.blit(assets['image_gus'], (WINDOW_WIDTH//1.25, WINDOW_HEIGHT //3.5))

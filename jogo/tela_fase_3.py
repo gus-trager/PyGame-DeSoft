@@ -3,7 +3,7 @@ import sys
 from assets import *
 from parametros import *
 
-
+#função da fase 3
 def fase_lvl3(window,tempo_inicial):
 
     clock = pygame.time.Clock()
