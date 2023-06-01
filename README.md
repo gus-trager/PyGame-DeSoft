@@ -25,3 +25,4 @@ sprite - https://www.spriters-resource.com
 imagem mira - https://www.nicepng.com
 
 
+Referências: Handout Pygame - Design de Software
